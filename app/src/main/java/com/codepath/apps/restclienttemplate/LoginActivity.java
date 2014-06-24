@@ -2,6 +2,7 @@ package com.codepath.apps.restclienttemplate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
@@ -22,12 +23,25 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 		getMenuInflater().inflate(R.menu.login, menu);
 		return true;
 	}
-	
-	// OAuth authenticated successfully, launch primary authenticated activity
+
+    @Override
+    protected void onResume() {
+        Log.d("Debug", "Resuming");
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.d("Debug", "Stopping");
+        super.onStop();
+    }
+
+    // OAuth authenticated successfully, launch primary authenticated activity
 	// i.e Display application "homepage"
     @Override
     public void onLoginSuccess() {
-    	Intent i = new Intent(this, TimelineActivity.class);
+        Log.d("Debug", "Success, opening Timeline");
+        Intent i = new Intent(this, TimelineActivity.class);
     	startActivity(i);
     }
     

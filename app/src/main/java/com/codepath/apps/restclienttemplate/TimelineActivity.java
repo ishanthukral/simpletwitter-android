@@ -1,11 +1,14 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -16,7 +19,10 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class TimelineActivity extends Activity {
 
@@ -34,7 +40,7 @@ public class TimelineActivity extends Activity {
         tweets = new ArrayList<Tweet>();
         aTweets = new TweetArrayAdapter(this, tweets);
         lvTweets.setAdapter(aTweets);
-        populateTimeline();
+//        populateTimeline();
     }
 
     public void populateTimeline() {
@@ -50,6 +56,11 @@ public class TimelineActivity extends Activity {
                 Log.d("debug", s.toString());
             }
         });
+    }
+
+    public void composeTweet(MenuItem mi) {
+        Intent i = new Intent(this, ComposeActivity.class);
+        startActivity(i);
     }
 
     @Override
