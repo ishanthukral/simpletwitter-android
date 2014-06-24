@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.8.4-a3fc8ae9c4c3ff218b9456942c99adb835328ce4.jar"
+        jar="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/libs/universal-image-loader-1.8.4.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="eee81e43531ce82db1781c5a8b27781ca384eede"/>
+    <item
+        dex="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/pre-dexed/debug/classes-a361ea895c17f5640f3e0bbf5cd45977ef9d299f.jar"
+        jar="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/pre-dexed/debug/codepath-utils-5d13c10e67d764afca7caf61676c11b4b90015c5.jar"
+        jar="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/libs/codepath-utils.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="10901a5ef726eacf1b2443b7f38dc4cc9cd3f7d4"/>
+    <item
+        dex="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/pre-dexed/debug/scribe-codepath-2db5420c168efff5d3a742c551019ae530e0c9c0.jar"
+        jar="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/libs/scribe-codepath.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="6e0748acc9e7be0695de0d38016d260df52d9167"/>
+    <item
+        dex="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/pre-dexed/debug/ActiveAndroid-3.1-adcddac4c58-b85b0cceaf42069fd9d6deca62a1404d0b41363f.jar"
+        jar="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/libs/ActiveAndroid-3.1-adcddac4c58.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e550c03ed8bcfe3b9f97d8c5ce6e8ee305f3beed"/>
+    <item
+        dex="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-fe930dc68beb1e566675ce71b270d4091c6c249b.jar"
+        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/pre-dexed/debug/codepath-oauth-0.3.0-90591e9bb3567d0b6a0d921f4c3e73040183a6b0.jar"
+        jar="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/libs/codepath-oauth-0.3.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b90f1c3541987f690e2fb854775914cc23266250"/>
+    <item
+        dex="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/pre-dexed/debug/android-async-http-1.4.3-042c6c5e0e5d1f16850cbd8167f76d5107cc4a5f.jar"
+        jar="/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/libs/android-async-http-1.4.3.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="f70e680861fdf9449819003e7799a4e9aca047f8"/>
+
+</pre-dex-items>
