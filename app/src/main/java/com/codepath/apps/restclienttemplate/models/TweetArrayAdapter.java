@@ -45,7 +45,7 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), ivProfileImage);
 
-        tvScreenName.setText(tweet.getUser().getScreenName());
+        tvScreenName.setText("@"+tweet.getUser().getScreenName());
         tvBody.setText(tweet.getBody());
         tvTimestamp.setText(getRelativeTimeAgo(tweet.getCreatedAt()));
 
@@ -65,6 +65,13 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        relativeDate = relativeDate.replaceAll("seconds", "s");
+        relativeDate = relativeDate.replaceAll("second", "s");
+        relativeDate = relativeDate.replaceAll("minutes", "m");
+        relativeDate = relativeDate.replaceAll("minute", "m");
+        relativeDate = relativeDate.replaceAll("hours", "h");
+        relativeDate = relativeDate.replaceAll("hour", "h");
 
         return relativeDate;
     }

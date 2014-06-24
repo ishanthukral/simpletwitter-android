@@ -23,7 +23,7 @@ public class Tweet {
         try {
             tweet.body = jsonObject.getString("text");
             tweet.tId = jsonObject.getLong("id");
-            tweet.createdAt = jsonObject.getString("createdAt");
+            tweet.createdAt = jsonObject.getString("created_at");
             tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
         } catch (JSONException e) {
             e.printStackTrace();

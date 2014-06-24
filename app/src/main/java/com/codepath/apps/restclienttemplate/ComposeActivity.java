@@ -1,6 +1,7 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -30,17 +31,10 @@ public class ComposeActivity extends Activity {
     }
 
     public void sendTweet(View v) {
-        client.postTweet(etTweetBar.getText().toString(), new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(JSONArray jsonArray) {
-                Log.d("Debug", "TWEET POSTED");
-            }
-
-            @Override
-            public void onFailure(Throwable throwable, JSONArray jsonArray) {
-                Log.d("Debug", throwable.toString());
-            }
-        });
+        Intent i = new Intent();
+        i.putExtra("status", etTweetBar.getText().toString());
+        setResult(RESULT_OK, i);
+        finish();
     }
 
     @Override

@@ -551,9 +551,10 @@
     <string name="login_label">Connect to Twitter</string>
     <string name="template_tweet_body">This is a tweet body</string>
     <string name="template_user">\@foo</string>
-    <string name="title_activity_compose">ComposeActivity</string>
+    <string name="timestamp_placeholder">0 min</string>
+    <string name="title_activity_compose">Compose Tweet</string>
     <string name="title_activity_photos">Flickr Photos</string>
-    <string name="title_activity_timeline">TimelineActivity</string>
+    <string name="title_activity_timeline">Timeline</string>
     <string name="tweet_bar">What\'s happening?</string>
     <string name="tweet_button">Tweet</string>
     <!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/src/main/res/values/styles.xml -->

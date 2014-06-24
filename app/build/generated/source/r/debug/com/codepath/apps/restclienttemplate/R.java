@@ -938,12 +938,12 @@ containing a value of this type.
         public static final int action_bar_root=0x7f07001a;
         public static final int action_bar_subtitle=0x7f070023;
         public static final int action_bar_title=0x7f070022;
-        public static final int action_compose=0x7f070043;
+        public static final int action_compose=0x7f070044;
         public static final int action_context_bar=0x7f07001d;
         public static final int action_menu_divider=0x7f070015;
         public static final int action_menu_presenter=0x7f070016;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f070042;
+        public static final int action_settings=0x7f070043;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int always=0x7f07000f;
         public static final int beginning=0x7f07000a;
@@ -994,8 +994,9 @@ containing a value of this type.
         public static final int tabMode=0x7f070002;
         public static final int title=0x7f07002b;
         public static final int top_action_bar=0x7f070020;
-        public static final int tvBody=0x7f070041;
-        public static final int tvScreenName=0x7f070040;
+        public static final int tvBody=0x7f070040;
+        public static final int tvScreenName=0x7f070041;
+        public static final int tvTimestamp=0x7f070042;
         public static final int up=0x7f070021;
         public static final int useLogo=0x7f070003;
         public static final int withText=0x7f070010;
@@ -1060,11 +1061,12 @@ containing a value of this type.
         public static final int login_label=0x7f0a0010;
         public static final int template_tweet_body=0x7f0a0011;
         public static final int template_user=0x7f0a0012;
-        public static final int title_activity_compose=0x7f0a0013;
-        public static final int title_activity_photos=0x7f0a0014;
-        public static final int title_activity_timeline=0x7f0a0015;
-        public static final int tweet_bar=0x7f0a0016;
-        public static final int tweet_button=0x7f0a0017;
+        public static final int timestamp_placeholder=0x7f0a0013;
+        public static final int title_activity_compose=0x7f0a0014;
+        public static final int title_activity_photos=0x7f0a0015;
+        public static final int title_activity_timeline=0x7f0a0016;
+        public static final int tweet_bar=0x7f0a0017;
+        public static final int tweet_button=0x7f0a0018;
     }
     public static final class style {
         /** 

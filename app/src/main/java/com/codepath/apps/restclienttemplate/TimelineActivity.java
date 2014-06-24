@@ -18,6 +18,7 @@ import com.codepath.apps.restclienttemplate.models.TweetArrayAdapter;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,6 +32,8 @@ public class TimelineActivity extends Activity {
     private ArrayAdapter<Tweet> aTweets;
     private ListView lvTweets;
 
+    private int COMPOSE_RESULT_CODE = 007;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +43,21 @@ public class TimelineActivity extends Activity {
         tweets = new ArrayList<Tweet>();
         aTweets = new TweetArrayAdapter(this, tweets);
         lvTweets.setAdapter(aTweets);
-//        populateTimeline();
+
+        lvTweets.setOnScrollListener(new EndlessScrollListener() {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount) {
+                Long lastTweetId = tweets.get(tweets.size()-1).gettId()-1;
+                String maxId = lastTweetId.toString();
+                downloadMoreTweets(maxId);
+            }
+        });
+
+        downloadMoreTweets(null);
     }
 
-    public void populateTimeline() {
-        client.getHomeTimeline(new JsonHttpResponseHandler() {
+    private void downloadMoreTweets(String maxId) {
+        client.getHomeTimeline(null, maxId, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONArray json) {
                 aTweets.addAll(Tweet.fromJsonArray(json));
@@ -58,9 +71,41 @@ public class TimelineActivity extends Activity {
         });
     }
 
+    private void updateWithNewTweets() {
+        client.getHomeTimeline(tweets.get(0).gettId().toString(), null, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(JSONArray jsonArray) {
+                tweets.addAll(0, Tweet.fromJsonArray(jsonArray));
+                aTweets.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Throwable throwable, JSONArray jsonArray) {
+                Log.d("Debug", throwable.toString());
+            }
+        });
+    }
+
     public void composeTweet(MenuItem mi) {
         Intent i = new Intent(this, ComposeActivity.class);
-        startActivity(i);
+        startActivityForResult(i, COMPOSE_RESULT_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == COMPOSE_RESULT_CODE && resultCode == RESULT_OK) {
+            client.postTweet(data.getStringExtra("status").trim(), new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(JSONObject jsonObject) {
+                    updateWithNewTweets();
+                }
+
+                @Override
+                public void onFailure(Throwable throwable, JSONArray jsonArray) {
+                    Log.d("Debug", throwable.toString());
+                }
+            });
+        }
     }
 
     @Override
