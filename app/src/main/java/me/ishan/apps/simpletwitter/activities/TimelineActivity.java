@@ -50,7 +50,10 @@ public class TimelineActivity extends FragmentActivity implements ComposeDialogF
 
     @Override
     public void sendTweet(String tweetString) {
-        
+        HomeTimelineFragment homeTimelineFragment = (HomeTimelineFragment) getSupportFragmentManager().findFragmentByTag("home");
+        if (homeTimelineFragment != null) {
+            homeTimelineFragment.fetchNewTweets();
+        }
     }
 
     @Override

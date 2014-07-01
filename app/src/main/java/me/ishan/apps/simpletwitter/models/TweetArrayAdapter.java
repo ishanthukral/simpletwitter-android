@@ -27,7 +27,6 @@ import me.ishan.apps.simpletwitter.activities.TimelineActivity;
  * Created by ithukral on 6/23/14.
  */
 public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
-    Tweet tweet;
 
     public TweetArrayAdapter(FragmentActivity context, List<Tweet> tweets) {
         super(context, 0, tweets);
@@ -35,7 +34,8 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        tweet = getItem(position);
+        final Tweet tweet = getItem(position);
+        final User user = tweet.getUser();
 
         View v;
         if (convertView == null) {
@@ -51,7 +51,6 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
             @Override
             public void onClick(View view) {
                 Context context = TweetArrayAdapter.this.getContext();
-                User user = tweet.getUser();
                 Intent i = new Intent(context, ProfileActivity.class);
                 i.putExtra("user", user);
                 context.startActivity(i);
