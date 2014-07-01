@@ -19,9 +19,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/template_tweet_body"
         android:id="@+id/tvBody"
-        android:layout_below="@+id/tvScreenName"
-        android:layout_alignLeft="@+id/tvScreenName"
-        android:layout_alignStart="@+id/tvScreenName"
+        android:layout_below="@+id/tvName"
+        android:layout_alignLeft="@+id/tvName"
+        android:layout_alignStart="@+id/tvName"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp" />
 
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/template_user"
-        android:id="@+id/tvScreenName"
+        android:id="@+id/tvName"
         android:layout_alignTop="@+id/ivProfileImage"
         android:layout_toRightOf="@+id/ivProfileImage"
         android:layout_marginLeft="26dp" />
@@ -41,7 +41,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/timestamp_placeholder"
         android:id="@+id/tvTimestamp"
-        android:layout_alignTop="@+id/tvScreenName"
+        android:layout_alignTop="@+id/tvName"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="10dp" />

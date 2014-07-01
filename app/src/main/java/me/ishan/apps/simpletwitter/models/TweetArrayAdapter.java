@@ -1,6 +1,9 @@
 package me.ishan.apps.simpletwitter.models;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,17 +20,22 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
+import me.ishan.apps.simpletwitter.activities.ProfileActivity;
+import me.ishan.apps.simpletwitter.activities.TimelineActivity;
+
 /**
  * Created by ithukral on 6/23/14.
  */
 public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
-    public TweetArrayAdapter(Context context, List<Tweet> tweets) {
+    Tweet tweet;
+
+    public TweetArrayAdapter(FragmentActivity context, List<Tweet> tweets) {
         super(context, 0, tweets);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Tweet tweet = getItem(position);
+        tweet = getItem(position);
 
         View v;
         if (convertView == null) {
@@ -38,7 +46,19 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
         }
 
         ImageView ivProfileImage = (ImageView) v.findViewById(R.id.ivProfileImage);
-        TextView tvScreenName = (TextView) v.findViewById(R.id.tvScreenName);
+
+        ivProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = TweetArrayAdapter.this.getContext();
+                User user = tweet.getUser();
+                Intent i = new Intent(context, ProfileActivity.class);
+                i.putExtra("user", user);
+                context.startActivity(i);
+            }
+        });
+
+        TextView tvScreenName = (TextView) v.findViewById(R.id.tvName);
         TextView tvBody = (TextView) v.findViewById(R.id.tvBody);
         TextView tvTimestamp = (TextView) v.findViewById(R.id.tvTimestamp);
 

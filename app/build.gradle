@@ -1,13 +1,13 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion "android-L"
+    buildToolsVersion "20"
 
     defaultConfig {
         applicationId "com.codepath.apps.restclienttemplate"
-        minSdkVersion 14
-        targetSdkVersion 19
+        minSdkVersion 16
+        targetSdkVersion "L"
     }
 
     buildTypes {
@@ -26,5 +26,5 @@ dependencies {
     compile files('libs/scribe-codepath.jar')
     compile files('libs/universal-image-loader-1.8.4.jar')
     compile 'com.android.support:support-v4:+'
-    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.android.support:appcompat-v7:20.+'
 }
