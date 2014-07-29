@@ -6,6 +6,8 @@
 
     <style name="AppBaseTheme" parent="android:Theme.Material.Light">
         <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:colorPrimary">#00A9D8</item>
+        <item name="android:colorPrimaryDark">#0080A6</item>
     </style>
 
 </resources>

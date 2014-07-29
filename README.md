@@ -29,10 +29,20 @@ User can view more tweets as they scroll with infinite pagination
 * User can see picture, tagline, # of followers, # of following, and tweets of clicked user.
 * Profile view should include that user's timeline
 
+## Sprint 3
+
+* Style the login screen for twitter
+* Pick a good Twitter launcher icon
+* Properly theme the ActionBar with correct text and background colors
+* Theme the tabs to fit a "twitter" color scheme
+* On compose screen, the "post" button should be customized (images or drawables) with a pressed state
+* Add inline "favorite" and "reply" icons to each tweet. Favorite icon should toggle when pressed.
+
+
 #Advanced
 
 * Advanced: Improve the user interface and theme the app to feel twitter branded
 
 
-![walkthrough](twitter2.gif)
+![walkthrough](twitter3.gif)
 
