@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.codepath.apps.simpletwitter.R;
@@ -33,7 +34,7 @@ public class ComposeDialogFragment extends DialogFragment {
 
     private EditText etComposeTweet;
     private TextView tvCharCount;
-    private Button btnComposeTweet;
+    private ImageButton btnComposeTweet;
 
     private TwitterClient client;
 
@@ -43,12 +44,15 @@ public class ComposeDialogFragment extends DialogFragment {
     }
 
     public void onTweetButton() {
+        btnComposeTweet.setBackgroundResource(R.drawable.send_button_active);
+
         final OnTweetButtonListener listener = (OnTweetButtonListener) getActivity();
         client.postTweet(etComposeTweet.getText().toString(), new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONObject jsonObject) {
                 super.onSuccess(jsonObject);
                 listener.sendTweet(etComposeTweet.getText().toString());
+                dismiss();
             }
 
             @Override
@@ -56,7 +60,6 @@ public class ComposeDialogFragment extends DialogFragment {
                 super.onFailure(throwable, jsonObject);
             }
         });
-        dismiss();
     }
 
 
@@ -68,7 +71,8 @@ public class ComposeDialogFragment extends DialogFragment {
 
         etComposeTweet = (EditText) v.findViewById(R.id.etComposeTweet);
         tvCharCount = (TextView) v.findViewById(R.id.tvCharCount);
-        btnComposeTweet = (Button) v.findViewById(R.id.btnComposeTweet);
+        btnComposeTweet = (ImageButton) v.findViewById(R.id.btnComposeTweet);
+        btnComposeTweet.setBackgroundResource(R.drawable.send_button);
         btnComposeTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

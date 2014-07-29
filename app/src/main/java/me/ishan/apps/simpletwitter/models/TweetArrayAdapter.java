@@ -9,24 +9,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.codepath.apps.simpletwitter.R;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.nostra13.universalimageloader.core.ImageLoader;
+
+import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
+import me.ishan.apps.simpletwitter.TwitterApplication;
+import me.ishan.apps.simpletwitter.TwitterClient;
 import me.ishan.apps.simpletwitter.activities.ProfileActivity;
 import me.ishan.apps.simpletwitter.activities.TimelineActivity;
+
 
 /**
  * Created by ithukral on 6/23/14.
  */
 public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
+
+    TwitterClient client;
 
     public TweetArrayAdapter(FragmentActivity context, List<Tweet> tweets) {
         super(context, 0, tweets);
@@ -60,6 +69,70 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
         TextView tvScreenName = (TextView) v.findViewById(R.id.tvName);
         TextView tvBody = (TextView) v.findViewById(R.id.tvBody);
         TextView tvTimestamp = (TextView) v.findViewById(R.id.tvTimestamp);
+
+        final TextView tvRetweetCount = (TextView) v.findViewById(R.id.tvRetweetCount);
+        tvRetweetCount.setText(String.valueOf(tweet.getRetweetCount()));
+
+        final ImageButton ibStar = (ImageButton) v.findViewById(R.id.ibStar);
+        if (tweet.getFavorited()) {
+            ibStar.setBackgroundResource(R.drawable.ic_star_active);
+        } else {
+            ibStar.setBackgroundResource(R.drawable.ic_star);
+        }
+        ibStar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (client == null) {
+                    client = TwitterApplication.getRestClient();
+                }
+                client.favouriteTweet(tweet.gettId().toString(), new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(JSONObject jsonObject) {
+                        super.onSuccess(jsonObject);
+                        ibStar.setBackgroundResource(R.drawable.ic_star_active);
+                        tweet.setFavorited(true);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable, JSONObject jsonObject) {
+                        super.onFailure(throwable, jsonObject);
+                    }
+                });
+            }
+        });
+
+
+        final ImageButton ibRetweet = (ImageButton) v.findViewById(R.id.ibRetweet);
+        if (tweet.getRetweeted()) {
+            ibRetweet.setBackgroundResource(R.drawable.ic_retweet_active);
+        } else {
+            ibRetweet.setBackgroundResource(R.drawable.ic_retweet);
+        }
+        ibRetweet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (client == null) {
+                    client = TwitterApplication.getRestClient();
+                }
+                client.retweetTweet(tweet.gettId().toString(), new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(JSONObject jsonObject) {
+                        super.onSuccess(jsonObject);
+                        ibRetweet.setBackgroundResource(R.drawable.ic_retweet_active);
+                        tweet.setRetweetCount(tweet.getRetweetCount()+1);
+                        tvRetweetCount.setText(String.valueOf(tweet.getRetweetCount()));
+                        tweet.setRetweeted(true);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable, JSONObject jsonObject) {
+                        super.onFailure(throwable, jsonObject);
+                    }
+                });
+            }
+        });
+
+        ImageButton ibReply = (ImageButton) v.findViewById(R.id.ibReply);
 
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), ivProfileImage);

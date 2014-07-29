@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <attr name="actionBarDivider" format="reference" />
@@ -513,7 +513,7 @@
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
@@ -554,10 +554,11 @@
     <string name="login_label">Connect to Twitter</string>
     <string name="template_tweet_body">This is a tweet body</string>
     <string name="template_user">\@foo</string>
+    <string name="timeline_title">Timeline</string>
     <string name="timestamp_placeholder">0 min</string>
     <string name="title_activity_compose">Compose Tweet</string>
     <string name="title_activity_photos">Flickr Photos</string>
-    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_profile">Profile</string>
     <string name="title_activity_timeline">Timeline</string>
     <string name="tweet_bar">What\'s happening?</string>
     <string name="tweet_button">Tweet</string>
@@ -575,7 +576,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-    <!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <style name="TextAppearance.AppCompat.Base.CompactMenu.Dialog" parent="android:TextAppearance.Medium">

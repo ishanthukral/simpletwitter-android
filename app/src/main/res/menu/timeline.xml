@@ -6,13 +6,6 @@
         android:title="@string/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never" />
-    <item android:id="@+id/action_compose"
-          android:title="Compose"
-          android:icon="@drawable/ic_action_name"
-          android:orderInCategory="100"
-          android:showAsAction="always"
-          android:onClick="composeTweet"
-        />
 
     <item android:id="@+id/action_profile"
           android:showAsAction="always"

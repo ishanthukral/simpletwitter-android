@@ -3,7 +3,9 @@ package me.ishan.apps.simpletwitter.activities;
 import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -12,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -93,6 +96,13 @@ public class TimelineActivity extends FragmentActivity implements ComposeDialogF
 
     private void setupTabs() {
         ActionBar actionBar = getActionBar();
+
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setTitle("");
+
+        View custom_actionbar = getLayoutInflater().inflate(R.layout.icon_action_bar_custom, null);
+        actionBar.setCustomView(custom_actionbar);
+
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayShowTitleEnabled(true);
 
@@ -103,7 +113,8 @@ public class TimelineActivity extends FragmentActivity implements ComposeDialogF
                 .setTag("HomeTimelineFragment")
                 .setTabListener(
                         new FragmentTabListener<HomeTimelineFragment>(R.id.flContainer, this, "home",
-                                HomeTimelineFragment.class));
+                                HomeTimelineFragment.class)
+                );
 
         actionBar.addTab(tab1);
         actionBar.selectTab(tab1);

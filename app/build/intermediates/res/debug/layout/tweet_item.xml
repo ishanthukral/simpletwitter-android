@@ -45,5 +45,43 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="40dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_alignLeft="@+id/tvBody"
+        android:layout_alignStart="@+id/tvBody"
+        android:layout_marginBottom="5px">
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_star"
+            android:id="@+id/ibStar" />
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_retweet"
+            android:id="@+id/ibRetweet"
+            android:layout_marginLeft="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/tvRetweetCount"
+            android:layout_marginLeft="5dp" />
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_reply"
+            android:id="@+id/ibReply"
+            android:layout_marginLeft="50dp" />
+    </LinearLayout>
+
 </RelativeLayout>
 <!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/src/main/res/layout/tweet_item.xml -->

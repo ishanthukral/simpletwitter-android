@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_twitter_bird"
+        android:id="@+id/ivLogo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/timeline_title"
+        android:id="@+id/tvTitle"
+        android:layout_toEndOf="@+id/ivLogo"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp" />
+</RelativeLayout><!-- From: file:/Users/ithukral/Workspace/IntroAndroidCourse/class3/SimpleTwitterClient/app/src/main/res/layout/icon_action_bar_custom.xml -->

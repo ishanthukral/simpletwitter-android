@@ -19,7 +19,6 @@ public class MentionsTimelineFragment extends TweetListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         client = TwitterApplication.getRestClient();
-        downloadMoreMentions(null);
     }
 
     @Override

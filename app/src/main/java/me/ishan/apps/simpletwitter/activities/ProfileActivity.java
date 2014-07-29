@@ -34,8 +34,24 @@ public class ProfileActivity extends FragmentActivity {
         try {
             user = (User) getIntent().getSerializableExtra("user");
             loadProfileInfo(user);
+            setTitle("@"+user.getScreenName());
+
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+
         } catch (Exception e) {
             loadProfileInfo();
+        }
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+
+            default:
+                return super.onMenuItemSelected(featureId, item);
         }
     }
 

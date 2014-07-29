@@ -18,16 +18,6 @@
         android:hint="@string/title_activity_compose"
         android:textColor="#000000"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/compose_tweet_button"
-        android:id="@+id/btnComposeTweet"
-        android:layout_marginTop="31dp"
-        android:layout_below="@+id/etComposeTweet"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,4 +27,15 @@
         android:layout_below="@+id/etComposeTweet"
         android:layout_alignRight="@+id/etComposeTweet"
         android:layout_alignEnd="@+id/etComposeTweet" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnComposeTweet"
+        android:layout_below="@+id/tvCharCount"
+        android:background="@drawable/send_button_active"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="20dp" />
+
 </RelativeLayout>
